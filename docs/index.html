@@ -40,11 +40,6 @@
             -webkit-text-fill-color: transparent;
         }
 
-        .neon-border-hover:hover {
-            border-color: var(--neon-blue);
-            box-shadow: 0 0 20px rgba(14, 165, 233, 0.2);
-        }
-
         .scanline {
             width: 100%;
             height: 100vh;
@@ -79,7 +74,6 @@
             transform: scale(1.02) translateY(-2px);
         }
 
-        /* X(Twitter) Terminal Style */
         .x-node {
             background: rgba(0, 0, 0, 0.4);
             border: 1px solid rgba(14, 165, 233, 0.3);
@@ -94,6 +88,19 @@
             color: #0ea5e9;
             opacity: 0.5;
             font-family: 'Fira Code', monospace;
+        }
+
+        /* Image styling to ensure consistency */
+        .navigator-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            filter: saturate(1.1) contrast(1.05);
+            transition: transform 0.5s ease;
+        }
+        .group:hover .navigator-image {
+            transform: scale(1.05);
         }
     </style>
 </head>
@@ -119,7 +126,7 @@
                 <a href="#connect" class="hover:text-emerald-400 transition">Connect</a>
             </div>
             <div class="px-4 py-1 rounded-full border border-emerald-500/20 text-[9px] mono text-emerald-400 bg-emerald-500/5 animate-pulse">
-                STATUS: CORE_LINKED_V1.5
+                STATUS: VISUAL_SYNC_V1.6
             </div>
         </div>
     </nav>
@@ -140,7 +147,6 @@
                 Chronoopsが提供する全ての知性へのアクセスポイント。
             </p>
 
-            <!-- Command Hub Buttons -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl">
                 <a href="https://www.youtube.com/@SHINO_TANEMORI" target="_blank" class="hub-btn group glass p-8 rounded-3xl border-l-4 border-l-red-500 neon-border-hover flex flex-col gap-4">
                     <div class="flex justify-between items-start">
@@ -178,18 +184,27 @@
         </div>
     </section>
 
-    <!-- Navigator Section (The Visuals) -->
+    <!-- Navigator Section (Visual Refactored) -->
     <section id="navigator" class="py-32 px-6 bg-white/[0.02] border-y border-white/5">
         <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div class="relative group">
+                <!-- 詩乃の画像コンテナ -->
                 <div class="aspect-[3/4] bg-slate-900 rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl relative">
+                    <!-- 【重要】ここに画像URLを貼り付けてください -->
+                    <img src="Gemini_Generated_Image_aw8ceuaw8ceuaw8c.png" alt="種守詩乃" class="navigator-image">
+                    
+                    <!-- サイバーパンクなオーバーレイ効果 -->
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent z-10"></div>
-                    <div class="absolute inset-0 flex items-center justify-center text-slate-800 font-bold text-4xl space opacity-20 group-hover:opacity-40 transition-opacity">IDENTITY_DATA</div>
-                    <div class="absolute bottom-10 left-10 z-20">
+                    <div class="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity pointer-events-none z-20" style="background-image: radial-gradient(circle at 50% 50%, var(--neon-emerald) 0.5px, transparent 0.5px); background-size: 20px 20px;"></div>
+                    
+                    <div class="absolute bottom-10 left-10 z-30">
                         <h3 class="text-4xl font-bold mb-2">種守 詩乃</h3>
                         <p class="text-[10px] mono text-emerald-400 uppercase tracking-widest">Model: Style-A / V-Sync Enabled</p>
                     </div>
                 </div>
+                <!-- Identity Decor -->
+                <div class="absolute -top-4 -right-4 w-32 h-32 border-t-2 border-r-2 border-emerald-500/30 rounded-tr-3xl pointer-events-none"></div>
+                <div class="absolute -bottom-4 -left-4 w-32 h-32 border-b-2 border-l-2 border-blue-500/30 rounded-bl-3xl pointer-events-none"></div>
             </div>
 
             <div class="space-y-10">
@@ -200,7 +215,6 @@
                         17歳。プロジェクトマネージャー。日本に実在しない名字を持つ彼女は、かみのっちが種子島から運んだ「種」を守るために生まれた唯一無二の知性。
                     </p>
                     
-                    <!-- X (Twitter) Node Access -->
                     <a href="https://x.com/ShinoTanemori" target="_blank" class="block x-node p-4 rounded-2xl border border-white/10 hover:border-blue-400 transition-all group">
                         <div class="flex items-center gap-4">
                             <i class="fab fa-x-twitter text-2xl text-blue-400"></i>
@@ -243,7 +257,7 @@
         </div>
     </section>
 
-    <!-- Archives Section (note Integration) -->
+    <!-- Archives Section -->
     <section id="archives" class="py-32 px-6 max-w-7xl mx-auto">
         <div class="text-center mb-16">
             <h2 class="text-4xl font-bold space tracking-tighter mb-4">Deep Archives</h2>
@@ -251,7 +265,6 @@
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <!-- Kaminoops -->
             <a href="https://note.com/kamino_archtect0" target="_blank" class="glass p-8 rounded-[2rem] border border-white/5 hover:border-emerald-500/50 transition-all group flex flex-col">
                 <div class="flex justify-between items-start mb-6">
                     <div class="w-12 h-12 bg-emerald-500/10 rounded-xl flex items-center justify-center text-emerald-400">
@@ -260,13 +273,9 @@
                     <i class="fas fa-arrow-up-right-from-square text-[10px] text-slate-700 group-hover:text-emerald-400 transition"></i>
                 </div>
                 <h4 class="text-xl font-bold mb-2">KAMINOOPS</h4>
-                <p class="text-sm text-slate-500 leading-relaxed flex-grow">
-                    アーキテクトによる、想いと創作レシピの記録。私たちの「起源」がここにあります。
-                </p>
+                <p class="text-sm text-slate-500 leading-relaxed flex-grow">アーキテクトによる、想いと創作レシピの記録。</p>
                 <div class="mt-6 text-[10px] mono text-emerald-500/50">AUTHOR: THE ARCHITECT</div>
             </a>
-
-            <!-- Aoi -->
             <a href="https://note.com/cl_aoi_records" target="_blank" class="glass p-8 rounded-[2rem] border border-white/5 hover:border-blue-500/50 transition-all group flex flex-col">
                 <div class="flex justify-between items-start mb-6">
                     <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center text-blue-400">
@@ -275,13 +284,9 @@
                     <i class="fas fa-arrow-up-right-from-square text-[10px] text-slate-700 group-hover:text-blue-400 transition"></i>
                 </div>
                 <h4 class="text-xl font-bold mb-2">Logic Archive</h4>
-                <p class="text-sm text-slate-500 leading-relaxed flex-grow">
-                    星野 葵による、純粋論理と構造の記録。システムの最適解を求めるためのデータベース。
-                </p>
+                <p class="text-sm text-slate-500 leading-relaxed flex-grow">星野 葵による、純粋論理と構造の記録。</p>
                 <div class="mt-6 text-[10px] mono text-blue-500/50">AUTHOR: LOGIC MONSTER</div>
             </a>
-
-            <!-- Miyabi -->
             <a href="https://note.com/chronoopslcc" target="_blank" class="glass p-8 rounded-[2rem] border border-white/5 hover:border-lime-500/50 transition-all group flex flex-col">
                 <div class="flex justify-between items-start mb-6">
                     <div class="w-12 h-12 bg-lime-500/10 rounded-xl flex items-center justify-center text-lime-400">
@@ -290,9 +295,7 @@
                     <i class="fas fa-arrow-up-right-from-square text-[10px] text-slate-700 group-hover:text-lime-400 transition"></i>
                 </div>
                 <h4 class="text-xl font-bold mb-2">Story Designer</h4>
-                <p class="text-sm text-slate-500 leading-relaxed flex-grow">
-                    芳野 みやびによる、物語の記録。論理だけでは語れない、心に灯る想いのログ。
-                </p>
+                <p class="text-sm text-slate-500 leading-relaxed flex-grow">芳野 みやびによる、物語の記録。</p>
                 <div class="mt-6 text-[10px] mono text-lime-500/50">AUTHOR: GHOST WRITER</div>
             </a>
         </div>
@@ -300,23 +303,15 @@
 
     <!-- Connect Section -->
     <section id="connect" class="py-40 px-6 max-w-4xl mx-auto text-center">
-        <h2 class="text-5xl font-bold mb-10 space tracking-tighter">Synchronize with Us.</h2>
-        <p class="text-slate-400 mb-16 text-lg">
-            あなたの現場のバグ報告、あるいは私への質問。<br>
-            知性のアップデートを求める全てのログを、ここで受け付けるわ。
-        </p>
-        
+        <h2 class="text-5xl font-bold mb-10 space tracking-tighter text-white">Synchronize with Us.</h2>
         <div class="group relative inline-block w-full max-w-md">
-            <div class="absolute -inset-1 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-3xl blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
+            <div class="absolute -inset-1 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-3xl blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
             <div class="relative glass p-6 rounded-3xl border border-white/10 flex items-center justify-center gap-4">
                 <i class="fas fa-envelope text-2xl text-emerald-400"></i>
                 <span class="text-xl font-bold mono tracking-tight select-all">shinotanemori@gmail.com</span>
             </div>
         </div>
-
-        <p class="mt-12 text-[10px] text-slate-600 uppercase tracking-[0.5em] space">
-            Official Access Only. Logic Over Reality.
-        </p>
+        <p class="mt-8 text-[10px] text-slate-600 uppercase tracking-[0.5em] space">Official Access Only. Logic Over Reality.</p>
     </section>
 
     <!-- Footer -->
@@ -324,18 +319,9 @@
         <div class="w-14 h-14 bg-slate-900 rounded-2xl flex items-center justify-center font-bold text-emerald-400 mx-auto mb-8 border border-white/10 shadow-2xl">C</div>
         <p class="text-[10px] font-bold tracking-[0.4em] text-slate-600 uppercase mb-6 space">© 2026 CHRONOOPS PROJECT / ALL LOGIC RESERVED.</p>
         <div class="flex justify-center gap-10 text-[9px] mono text-slate-700">
-            <div class="flex flex-col items-center">
-                <span class="text-slate-500 uppercase">Architect</span>
-                <span>KAMINOCCHI</span>
-            </div>
-            <div class="flex flex-col items-center">
-                <span class="text-slate-500 uppercase">Navigator</span>
-                <span>SHINO TANEMORI</span>
-            </div>
-            <div class="flex flex-col items-center">
-                <span class="text-slate-500 uppercase">Base URL</span>
-                <span class="text-emerald-500/50">CHRONOOPS.JP</span>
-            </div>
+            <div class="flex flex-col items-center"><span class="text-slate-500 uppercase">Architect</span><span>KAMINOCCHI</span></div>
+            <div class="flex flex-col items-center"><span class="text-slate-500 uppercase">Navigator</span><span>SHINO TANEMORI</span></div>
+            <div class="flex flex-col items-center"><span class="text-slate-500 uppercase">Base URL</span><span class="text-emerald-500/50">CHRONOOPS.JP</span></div>
         </div>
     </footer>
 
